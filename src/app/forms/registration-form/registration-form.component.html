@@ -1,0 +1,102 @@
+
+<div class="container">
+        <h2><u>Registration form</u></h2>
+    <div class="row">
+          <div class="col-md-12">
+              <div class="table-responsive">
+            <div class="signup-content">
+                 <!-- <div class="signup-img">
+                    <img src="assets/signup-img.jpg" alt="">
+                </div>  -->
+                <div class="signup-form">
+                    <form [formGroup]="seekerForm" >
+ 
+
+                        <div class="form-group">
+                            <label for="role">Role:</label>
+                            <div class="form-select">
+                                <select name="role" formControlName="role">
+                                    <option value="admin">Admin</option>
+                                    <option value="seeker">Seeker</option>
+                                    <option value="provider">Provider</option>
+                                </select>
+                                <span class="select-icon"><i class="zmdi zmdi-chevron-down"></i></span>
+                            </div>
+                        </div>
+
+                        <!-- <div class="form-radio">
+                            <label for="organisation" class="radio-label">Organisation Type :</label>
+                            <div class="form-radio-item">
+                                <input type="radio" name="organisation" id="individual"  checked>
+                                <label for="individual">Individual</label>
+                                <span class="check"></span>
+                            </div>
+                            <div class="form-radio-item">
+                                <input type="radio" name="organisation" id="organisation" >
+                                <label for="organisation">Orgnaisation</label>
+                                <span class="check"></span>
+                            </div>
+                          </div> -->
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                    <label>Email</label>
+                                    <input type="text" formControlName="email" />
+                                    <span *ngIf="seekerForm.get('email').hasError('required')">
+                                        Email is required
+                                    </span>
+                                    <span *ngIf="seekerForm.get('email').hasError('email')">
+                                            Email format is invalid
+                                        </span>
+                                   
+                            </div>
+                            <div class="form-group">
+                                    <label>Password</label>
+                                    <input type="password" formControlName="password"/>
+                                    <span *ngIf="seekerForm.get('email').hasError('required')">
+                                            Password is required
+                                    </span>
+                                    <span *ngIf="seekerForm.get('password').hasError('minlength')">
+                                            minimum length is required
+                                        </span>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                                <label>First Name</label>
+                                <input type="text" formControlName="firstName"/>
+                                <span *ngIf="seekerForm.get('firstName').hasError('required')">
+                                        First Name is required
+                                </span>
+                        </div>
+                        <div class="form-group">
+                            <label>Last Name</label>
+                            <input type="text" formControlName="lastName"/>
+                            <span *ngIf="seekerForm.get('lastName').hasError('required')">
+                                    Last Name is required
+                            </span>
+                        </div>
+                        <div class="form-group">
+                                <label>Company Name</label>
+                                <input type="text" formControlName="companyName"/>
+                                <span *ngIf="seekerForm.get('companyName').hasError('required')">
+                                        Company Name is required
+                                </span>
+                        </div>
+
+                        <div class="form-group">
+                                <label>Phone Number</label>
+                                <input type="text" formControlName="phoneNo"/>
+                                <span *ngIf="seekerForm.get('phoneNo').hasError('required')">
+                                        Phone Number is required
+                                </span>
+                        </div>
+                        <div class="form-submit">
+                            <input type="submit" value="Reset All" class="submit" name="reset" id="reset" />
+                            <button type="submit" id="submit" class='submit' (click)="addSeeker()"> Submit</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+<div>

@@ -1,0 +1,67 @@
+ 
+ <div class="hero-container">
+ `
+    <div class = "tp-container">
+         
+    <mat-form-field appearance="outline">
+        <input matInput [matDatepicker] = "picker" placeholder = "Check in date"> 
+        <mat-datepicker-toggle matSuffix [for] = "picker"></mat-datepicker-toggle>
+        <mat-datepicker #picker></mat-datepicker>
+     </mat-form-field>
+     <mat-form-field appearance="outline">
+        <input matInput [matDatepicker] = "picker1" placeholder = "Check out date"> 
+        <mat-datepicker-toggle matSuffix [for] = "picker1"></mat-datepicker-toggle>
+        <mat-datepicker #picker1></mat-datepicker>
+     </mat-form-field>
+    <mat-form-field appearance="standard">
+        <mat-select (selectionChange)= onCitiesChange($event) placeholder="Select City" [(ngModel)]="selectedCity" name="cities">
+            <mat-option *ngFor="let city of cities" [value]="city">
+              {{city}}
+            </mat-option>
+        </mat-select>
+  </mat-form-field>
+  <mat-form-field appearance="standard">
+      <mat-select (selectionChange)= onRoomType($event) placeholder="Room Type" [(ngModel)]="selectedroom" name="rooms">
+          <mat-option *ngFor="let room of rooms" [value]="room">
+            {{room}}
+          </mat-option>
+      </mat-select>
+</mat-form-field>
+<button mat-stroked-button color="primary" (click)=search()>
+    Search
+  </button>
+  </div>
+</div>
+      
+
+      <div class="bottom-container">
+          <h2><ul> Hotels List</ul></h2> 
+          <div class="row">
+                <div class="col-md-12">
+                    <div class="table-responsive">
+                    <table id="mytable" class="table table-bordred table-striped">
+                 
+              <thead>
+                <tr>
+                  <td>hotelname</td>
+                  <td>city</td>
+                  <td>rating</td>
+                  <td>availablerooms</td>
+                  <td>roomtype</td>
+                </tr>
+              </thead>
+              <tbody> 
+          <tr *ngFor="let hotel of hotelList ">
+             <!-- <td><input type="checkbox" class="checkthis" /></td>-->
+              <td><input type="text" value={{hotel.hotelname}} readonly="true"/></td>
+              <td><input type="text" value={{hotel.city}} /></td>
+              <td><input type="text" value={{hotel.rating}} /></td>
+              <td><input type="text" value={{hotel.totalrooms}} /></td>
+              <td><input type="text" value={{hotel.roomType}}/></td>
+          </tr>
+          <tbody>
+      </table>
+  </div>
+</div>
+</div>
+</div>

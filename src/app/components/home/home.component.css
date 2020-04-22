@@ -1,0 +1,22 @@
+.tp-container {
+  display:table-row;
+  flex-direction:column;
+  background-color:slateblue;
+  position:absolute;
+  margin-top: 50px;
+  width:100%;
+  margin-left:10px;
+}
+.tp-container > * {
+  width: 20%;
+  margin-right: 30px;
+  margin-left: 10px;
+}
+.hero-container{
+  width:100%;
+  margin-top:10px;
+  margin-bottom: 100px;
+}
+.bottom-container{
+  margin-top:200px;
+}

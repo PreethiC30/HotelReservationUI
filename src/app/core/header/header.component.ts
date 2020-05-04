@@ -4,7 +4,7 @@ import { Component, OnInit } from '@angular/core';
 @Component({
   selector: 'app-header',
   template: `
-  <nav class="navbar navbar-default" style="background-color:#333;">
+  <nav class="navbar navbar-default" style="background-color:#848686;">
   <div class="collapse navbar-collapse">
       <div class="navbar-header">
           <!-- <a class="navbar-brand">
@@ -13,12 +13,12 @@ import { Component, OnInit } from '@angular/core';
           <span class="navbar-brand"></span>
    
       <ul class="nav justify-content-end">      
-          <li class="nav-item"><a class="nav-link" routerLink="registraiton">Register</a> </li>  
+          <a class="nav-link" routerLink="registration">Register</a>
          <!--  <li> <a class="navbar-item" routerLink="addrequirement">Add Requirement</a> </li>  
           <li> <a class="navbar-item" routerLink="seekerslist">Seeker List</a> </li>
           <li>  <a class="navbar-item" routerLink="seekerprofile">SeekerProfile</a>  </li>
           <li> <a class="navbar-item" routerLink="getrequirementlist">Posted Requirements</a> </li>  -->
-          <li class="nav-item"> <a class="nav-link" routerLink="login">Login</a> </li>  
+          <a class="nav-link" routerLink="login">Login</a>
       </ul>
       </div>
   </div>
@@ -27,7 +27,8 @@ import { Component, OnInit } from '@angular/core';
   styles: []
 })
 export class HeaderComponent implements OnInit {
-  constructor() {}
+  constructor() { }
+
   ngOnInit() {}
 }
 /*<a class="navbar-item" routerLink="">Home</a>

@@ -17,8 +17,8 @@
                             <div class="form-select">
                                 <select name="role" formControlName="role">
                                     <option value="admin">Admin</option>
-                                    <option value="seeker">Seeker</option>
-                                    <option value="provider">Provider</option>
+                                    <option value="seeker">Customer</option>
+                                    <!--<option value="provider">Provider</option>-->
                                 </select>
                                 <span class="select-icon"><i class="zmdi zmdi-chevron-down"></i></span>
                             </div>
@@ -48,6 +48,11 @@
                                     <span *ngIf="seekerForm.get('email').hasError('email')">
                                             Email format is invalid
                                         </span>
+                                        <div *ngIf="email.errors">
+                                        <span *ngIf="email.errors.duplicateEmail">
+                                            Email exists
+                                        </span>
+                                        </div>
                                    
                             </div>
                             <div class="form-group">
@@ -76,22 +81,17 @@
                             </span>
                         </div>
                         <div class="form-group">
-                                <label>Company Name</label>
-                                <input type="text" formControlName="companyName"/>
-                                <span *ngIf="seekerForm.get('companyName').hasError('required')">
-                                        Company Name is required
-                                </span>
-                        </div>
-
-                        <div class="form-group">
                                 <label>Phone Number</label>
                                 <input type="text" formControlName="phoneNo"/>
                                 <span *ngIf="seekerForm.get('phoneNo').hasError('required')">
                                         Phone Number is required
                                 </span>
+                                <span *ngIf="seekerForm.get('phoneNo').hasError('number')">
+                                    Provide only numbers
+                            </span>
                         </div>
                         <div class="form-submit">
-                            <input type="submit" value="Reset All" class="submit" name="reset" id="reset" />
+                            <input type="submit" value="Reset All" class="submit" name="reset" id="reset" (click)="reset()" />
                             <button type="submit" id="submit" class='submit' (click)="addSeeker()"> Submit</button>
                         </div>
                     </form>
